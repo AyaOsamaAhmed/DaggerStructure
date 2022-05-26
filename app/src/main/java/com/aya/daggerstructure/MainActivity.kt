@@ -13,6 +13,9 @@ class MainActivity : AppCompatActivity() {
    @Inject
    lateinit var school1 : School
 
+    @Inject
+    lateinit var school2 : School
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,5 +34,6 @@ class MainActivity : AppCompatActivity() {
          component.inject(this)
 
         school1.startSchool()
+        school2.startSchool()
     }
 }

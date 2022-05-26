@@ -10,12 +10,13 @@ class School {
 
     var teacher : Teacher
     var manager : Manager
-
+    var worker :Worker
 
     @Inject
-    constructor( teacher : Teacher , manager: Manager){
+    constructor( teacher : Teacher , manager: Manager , worker : Worker){
         this.teacher = teacher
         this.manager = manager
+        this.worker = worker
     }
 
     @Inject
@@ -25,7 +26,7 @@ class School {
 
     fun startSchool(){
         manager.start()
-        Log.d(TAG, "startSchool >>>>>>>>>>>>>>>>")
+        Log.d(TAG, "startSchool >>>>>>  worker: $worker  & school: $this")
     }
 
     companion object {

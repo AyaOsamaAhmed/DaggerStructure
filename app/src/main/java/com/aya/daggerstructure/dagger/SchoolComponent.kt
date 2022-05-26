@@ -5,7 +5,9 @@ import com.aya.daggerstructure.school.School
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Named
+import javax.inject.Singleton
 
+@Singleton
 @Component (modules = [TeacherModules::class , ClassManagerModules::class ])
 interface SchoolComponent {
 
