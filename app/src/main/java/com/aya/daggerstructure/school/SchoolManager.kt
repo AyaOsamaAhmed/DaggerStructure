@@ -5,14 +5,17 @@ import javax.inject.Inject
 
 class SchoolManager  : Manager  {
 
-    @Inject
-    constructor(
+    private var sizeClass : Int
 
-    )
+    @Inject
+    constructor(sizeClass : Int){
+        this.sizeClass = sizeClass
+    }
 
     override fun start() {
-        Log.d(Companion.TAG, "start: ")
+        Log.d(TAG, "start: sizeClass : $sizeClass")
     }
+
 
     companion object {
         private const val TAG = "SchoolManager"

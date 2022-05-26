@@ -11,6 +11,7 @@ class School {
     var teacher : Teacher
     var manager : Manager
 
+
     @Inject
     constructor( teacher : Teacher , manager: Manager){
         this.teacher = teacher

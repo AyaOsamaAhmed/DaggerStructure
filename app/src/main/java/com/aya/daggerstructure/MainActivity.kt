@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.aya.daggerstructure.dagger.DaggerSchoolComponent
 import com.aya.daggerstructure.dagger.SchoolComponent
+import com.aya.daggerstructure.dagger.SchoolManagerModules
 import com.aya.daggerstructure.school.School
 import javax.inject.Inject
 
@@ -16,8 +17,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val component : SchoolComponent = DaggerSchoolComponent.create()
-            component.inject(this)
+      //   val component : SchoolComponent = DaggerSchoolComponent.create()
+
+        /*val component : SchoolComponent = DaggerSchoolComponent.builder()
+            .schoolManagerModules(SchoolManagerModules(100)).build()
+*/
+
+        val component : SchoolComponent = DaggerSchoolComponent.builder()
+            .numStudent(100)
+            .numTeacher(15200).build()
+         //   .schoolManagerModules(SchoolManagerModules(100)).build()
+
+         component.inject(this)
 
         school1.startSchool()
     }
