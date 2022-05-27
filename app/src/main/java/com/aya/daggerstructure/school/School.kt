@@ -30,7 +30,7 @@ class School {
 
     fun startSchool(){
         manager.start()
-        Log.d(TAG, "startSchool >>>>>>  & school: $this  && global : $globalManager")
+        Log.d(TAG, "startSchool >>>>>>  & school: $this && name : ${globalManager.name} && global : $globalManager")
         // worker: $worker
     }
 

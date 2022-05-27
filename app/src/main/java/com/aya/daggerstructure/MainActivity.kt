@@ -38,10 +38,7 @@ class MainActivity : AppCompatActivity() {
         )*/
 
         val component : SchoolComponent = ( application as ExampleApp).getInstanceGlobalComponent()
-            .getSchoolComponent()
-            .numStudent(100)
-            .numTeacher(15200)
-            .build()
+            .getSchoolComponent().create(100,15200)
 
         component.inject(this)
 

@@ -16,7 +16,7 @@ interface SchoolComponent {
     fun getSchool(): School
     fun inject(main : MainActivity)
 
-    @Subcomponent.Builder
+  /*  @Subcomponent.Builder
     interface Builder {
 
         @BindsInstance
@@ -29,5 +29,12 @@ interface SchoolComponent {
 
         fun build():SchoolComponent
 
+    }*/
+
+    @Subcomponent.Factory
+    interface Factory{
+
+        fun  create(@BindsInstance @Named("numStudent") numSchool:Int  ,
+                    @BindsInstance @Named("numTeacher") numTeacher:Int )  : SchoolComponent
     }
 }
