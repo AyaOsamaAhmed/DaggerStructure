@@ -2,8 +2,6 @@ package com.aya.daggerstructure
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.aya.daggerstructure.dagger.DaggerSchoolComponent
-import com.aya.daggerstructure.dagger.GlobalManagerComponent
 import com.aya.daggerstructure.dagger.SchoolComponent
 import com.aya.daggerstructure.dagger.SchoolManagerModules
 import com.aya.daggerstructure.school.School
@@ -27,13 +25,18 @@ class MainActivity : AppCompatActivity() {
             .schoolManagerModules(SchoolManagerModules(100)).build()
 */
 
-        val component : SchoolComponent = DaggerSchoolComponent.builder()
+     /*   val component : SchoolComponent = DaggerSchoolComponent.builder()
             .numStudent(100)
             .numTeacher(15200)
             .getGlobalManagerComponent( ( application as ExampleApp).getInstanceGlobalComponent())
             .build()
+
+      */
          //   .schoolManagerModules(SchoolManagerModules(100)).build()
 
+        val component :SchoolComponent = ( application as ExampleApp).getInstanceGlobalComponent().getSchoolComponent(
+            SchoolManagerModules(150)
+        )
          component.inject(this)
 
         school1.startSchool()

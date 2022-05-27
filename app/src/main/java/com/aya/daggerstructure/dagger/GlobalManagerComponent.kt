@@ -1,6 +1,5 @@
 package com.aya.daggerstructure.dagger
 
-import com.aya.daggerstructure.school.GlobalManager
 import dagger.Component
 import javax.inject.Singleton
 
@@ -9,6 +8,7 @@ import javax.inject.Singleton
 @Singleton
 interface GlobalManagerComponent {
 
-    fun getGlobalManager():GlobalManager
+    fun getSchoolComponent(schoolManagerModules: SchoolManagerModules):SchoolComponent
+ //   fun getGlobalManager():GlobalManager
 
 }

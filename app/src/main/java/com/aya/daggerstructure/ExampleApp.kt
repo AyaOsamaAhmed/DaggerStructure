@@ -14,7 +14,7 @@ class ExampleApp : Application() {
 
         globalManagerComponent = DaggerGlobalManagerComponent.create()
 
-        globalManagerComponent.getGlobalManager()
+       // globalManagerComponent.getGlobalManager()
     }
 
     fun  getInstanceGlobalComponent ():GlobalManagerComponent{
