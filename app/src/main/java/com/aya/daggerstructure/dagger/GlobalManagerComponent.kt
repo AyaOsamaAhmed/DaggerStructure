@@ -8,7 +8,8 @@ import javax.inject.Singleton
 @Singleton
 interface GlobalManagerComponent {
 
-    fun getSchoolComponent(schoolManagerModules: SchoolManagerModules):SchoolComponent
+    fun getSchoolComponent():SchoolComponent.Builder
+    //schoolManagerModules: SchoolManagerModules
  //   fun getGlobalManager():GlobalManager
 
 }

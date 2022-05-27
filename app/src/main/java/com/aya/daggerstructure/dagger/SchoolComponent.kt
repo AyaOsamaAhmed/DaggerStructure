@@ -10,16 +10,13 @@ import javax.inject.Singleton
 
 @PerActivity
 //@Component ( dependencies = [GlobalManagerComponent::class], modules = [TeacherModules::class , ClassManagerModules::class ])
-@Subcomponent (  modules = [TeacherModules::class , SchoolManagerModules::class ])
+@Subcomponent (  modules = [TeacherModules::class , ClassManagerModules::class ])
 interface SchoolComponent {
 
     fun getSchool(): School
     fun inject(main : MainActivity)
 
-  /*  fun getSchool(): School
-    fun inject(main : MainActivity)
-
-    @Component.Builder
+    @Subcomponent.Builder
     interface Builder {
 
         @BindsInstance
@@ -28,9 +25,9 @@ interface SchoolComponent {
         @BindsInstance
         fun numTeacher(@Named("numTeacher") numTeacher:Int ):Builder
 
-        fun getGlobalManagerComponent(global : GlobalManagerComponent ):Builder
+      //  fun getGlobalManagerComponent(global : GlobalManagerComponent ):Builder
 
         fun build():SchoolComponent
 
-    }*/
+    }
 }
